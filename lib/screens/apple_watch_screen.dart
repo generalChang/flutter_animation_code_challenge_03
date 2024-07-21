@@ -98,12 +98,16 @@ class _AppleWatchScreenState extends State<AppleWatchScreen>
           _blueCircleProgressAnimation
         ]),
         builder: (BuildContext context, Widget? child) {
-          return CustomPaint(
-            painter: AppleWatchPainter(
-                redCircleProgress: _redCircleProgressAnimation.value,
-                greenCircleProgress: _greenCircleProgressAnimation.value,
-                blueCircleProgress: _blueCircleProgressAnimation.value),
-            size: const Size(400, 400),
+          return Container(
+            height: 400,
+            width: 400,
+            child: CustomPaint(
+              painter: AppleWatchPainter(
+                  redCircleProgress: _redCircleProgressAnimation.value,
+                  greenCircleProgress: _greenCircleProgressAnimation.value,
+                  blueCircleProgress: _blueCircleProgressAnimation.value),
+              // size: const Size(400, 400),
+            ),
           );
         },
       )),
@@ -125,6 +129,14 @@ class AppleWatchPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     // TODO: implement paint
+
+    Path path = Path()
+    ..moveTo(0, 0)
+    ..lineTo(0, 50)
+    ..lineTo(200, 120)
+    ..lineTo(200, 0)..close();
+
+    canvas.drawPath(path, Paint()..color = Colors.white..style = PaintingStyle.stroke..strokeWidth = 20);
 
     final center = Offset(size.width / 2, size.height / 2);
     final redCirclePaint = Paint()

@@ -38,7 +38,7 @@ class _ImplicitAnimationScreenState extends State<ImplicitAnimationScreen> {
             const SizedBox(
               height: 10,
             ),
-            ElevatedButton(onPressed: _trigger, child: Text('go')),
+            ElevatedButton(onPressed: _trigger, child: const Text('go')),
           ],
         ),
       ),
