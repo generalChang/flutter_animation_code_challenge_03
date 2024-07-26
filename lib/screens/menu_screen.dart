@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animations_masterclass/screens/apple_watch_screen.dart';
 import 'package:flutter_animations_masterclass/screens/explicit_animation_screen.dart';
 import 'package:flutter_animations_masterclass/screens/implicit_animation_screen.dart';
+import 'package:flutter_animations_masterclass/screens/music_player_screen.dart';
+import 'package:flutter_animations_masterclass/screens/tinder_clone_screen.dart';
 import 'package:flutter_animations_masterclass/screens/swiping_card_screen.dart';
 
 class MenuScreen extends StatelessWidget {
@@ -23,12 +25,14 @@ class MenuScreen extends StatelessWidget {
           children: [
             ElevatedButton(
                 onPressed: () {
-                  _goToScreen(context: context, screen: ImplicitAnimationScreen());
+                  _goToScreen(
+                      context: context, screen: ImplicitAnimationScreen());
                 },
                 child: Text('Implicit animations')),
             ElevatedButton(
                 onPressed: () {
-                  _goToScreen(context: context, screen: ExplicitAnimationScreen());
+                  _goToScreen(
+                      context: context, screen: ExplicitAnimationScreen());
                 },
                 child: Text('explicit animations')),
             ElevatedButton(
@@ -41,6 +45,16 @@ class MenuScreen extends StatelessWidget {
                   _goToScreen(context: context, screen: SwipingCardScreen());
                 },
                 child: Text('swiping card')),
+            ElevatedButton(
+                onPressed: () {
+                  _goToScreen(context: context, screen: TinderCloneScreen());
+                },
+                child: Text('tinder clone')),
+            ElevatedButton(
+                onPressed: () {
+                  _goToScreen(context: context, screen: MusicPlayerScreen());
+                },
+                child: Text('music player')),
           ],
         ),
       ),
